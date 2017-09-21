@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjh.dao.FileDao">
+	<select id="queryFileByU_Name" parameterType="java.lang.String"
+		resultType="com.wjh.entity.File">
+		SELECT * FROM file WHERE filepath=#{filepath}
+	</select>
+
+	<update id="changeFileStatus" parameterType="com.wjh.entity.File">
+		UPDATE file set
+		canShare = #{canShare} WHERE fId = #{fId}
+	</update>
+
+	<insert id="uploadFile" parameterType="com.wjh.entity.File">
+		INSERT INTO file
+		(fileName,filePath,fileSize,createTime) VALUES
+		(#{fileName},#{filePath},#{fileSize},#{createTime})
+	</insert>
+	
+	<select id="findPathByF_Id" resultType="java.lang.String" parameterType="java.lang.Integer">
+		select filePath from file where fId = #{value}
+	</select>
+	
+	<delete id="deleteFile" parameterType="int">
+		delete from file where fId = #{value}
+	</delete>
+	
+	<select id="queryFileNameByF_Id" resultType="java.lang.String" parameterType="int">
+		select fileName from file where fId = #{value}
+	</select>
+</mapper>

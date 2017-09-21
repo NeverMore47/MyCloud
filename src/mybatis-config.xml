@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="MySQL" />
+			<property name="rowBoundsWithCount" value="true" />
+		</plugin>
+	</plugins>
+	<mappers>
+		<mapper resource="com/wjh/mapper/FileMapper.xml" />
+		<mapper resource="com/wjh/mapper/UserMapper.xml" />
+		<mapper resource="com/wjh/mapper/SearchMapper.xml" />
+	</mappers>
+</configuration>

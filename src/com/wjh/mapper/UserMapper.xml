@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjh.dao.UserDao">
+	<!-- 登录验证 -->
+	<select id="checkLogin" resultType="com.wjh.entity.User" parameterType="com.wjh.entity.User">
+		select * from user where uName = #{uName} and uPwd = #{uPwd}
+	</select>
+	<!-- 注册验证 -->
+	<select id="selectUserName" parameterType="java.lang.String" resultType="com.wjh.entity.User">
+		select * from user where uName = #{uName}
+	</select>
+	
+	<insert id="insertUser" parameterType="com.wjh.entity.User">
+		insert into `user` (uName,uPwd) VALUES (#{uName},#{uPwd})
+	</insert>
+
+</mapper>
