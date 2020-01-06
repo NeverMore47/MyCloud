@@ -20,7 +20,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/MyCloud"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="nikecr7"></property>
+		<property name="password" value="root"></property>
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
